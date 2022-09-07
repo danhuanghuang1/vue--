@@ -15,6 +15,7 @@
 // postcss自己能干的事很少，下载插件
 // i.下载yarn add postcss-pxtorem
 // 2.告诉postcss,我要使用这个插件，在根目录下新建.postcssrc.js
+
 export default {}
 </script>
 
