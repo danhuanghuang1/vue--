@@ -61,7 +61,7 @@
 
 <script>
 import { modileRules, codeRules } from './rule'
-import { login, sendCodeApi } from '@/api/user'
+import { login, sendCodeApi } from '@/api'
 import { mapMutations } from 'vuex'
 // 引入API
 export default {
@@ -85,7 +85,6 @@ export default {
     // token 身份证 标识用户
     // ·用处：标识用户是否登陆了
     // token存放vuex
-    // ·toekn存在vuex
     async onSubmit() {
       this.loading()
       try {

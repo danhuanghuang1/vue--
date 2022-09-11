@@ -1,5 +1,4 @@
 import request from '@/utils/request'
-
 /**
  * 登录
  * @param {String} mobile
@@ -24,5 +23,14 @@ export const login = (mobile, code) => {
 export const sendCodeApi = (mobile) => {
   return request({
     url: `/v1_0/sms/codes/${mobile}`
+  })
+}
+
+export const getUserinfo = () => {
+  return request({
+    url: '/v1_0/user'
+    // headers: {
+    //   Authorization: `Bearer ${store.state.tokenObj.token}`
+    // }
   })
 }

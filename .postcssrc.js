@@ -1,4 +1,4 @@
-// 所有的oostcss的插件都是一个函数
+// 所有的postcss的插件都是一个函数
 // 对vant库组件内容进行适配
 const pxToRem = require('postcss-pxtorem')
 module.exports = {
