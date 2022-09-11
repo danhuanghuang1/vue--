@@ -14,6 +14,7 @@ const request = axios.create({
 // 请求拦截器：请求做些事情
 // config是每一次请求的配置对象
 request.interceptors.request.use(
+  // axios请求前发生的函数
   function (config) {
     const {
       getters: { isLogin },
@@ -22,7 +23,12 @@ request.interceptors.request.use(
     if (isLogin) {
       config.headers.Authorization = `Bearer ${tokenObj.token}`
     }
+    // 这一行必须return
     return config
+  },
+  // axios请求后发生的函数
+  function (error) {
+    console.log(error)
   }
 
 )
