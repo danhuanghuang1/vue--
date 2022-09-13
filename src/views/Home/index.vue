@@ -14,22 +14,39 @@ active:高亮的tab的索引 -->
         <!-- 文章详情 -->
         <ArticleList :id="item.id"></ArticleList>
       </van-tab>
-      <span class="toutiao toutiao-gengduo"></span>
+      <span class="toutiao toutiao-gengduo" @click="isShow = true"></span>
     </van-tabs>
+
+    <!-- 弹出层 -->
+    <van-popup
+      v-model="isShow"
+      position="bottom"
+      :style="{ height: '100%' }"
+      closeable
+      close-icon-position="top-left"
+    >
+      <ChannelEdit
+        :myChannels="channels"
+        @change-active=";[(isShow = false), (active = $event)]"
+      ></ChannelEdit>
+    </van-popup>
   </div>
 </template>
 
 <script>
 import ArticleList from './components/ArticleList.vue'
 import { getChannelAPI } from '@/api'
+import ChannelEdit from '@/views/Home/components/ChannelEdit.vue'
 export default {
   components: {
-    ArticleList
+    ArticleList,
+    ChannelEdit
   },
   data() {
     return {
       active: 2,
-      channels: []
+      channels: [],
+      isShow: false
     }
   },
   created() {

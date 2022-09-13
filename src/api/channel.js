@@ -5,3 +5,12 @@ export const getChannelAPI = () => {
     url: '/v1_0/user/channels'
   })
 }
+/**
+ * 获取我的频道
+ * @returns
+ */
+export const getAllChanneslAPI = () => {
+  return request({
+    url: '/v1_0/channels'
+  })
+}
