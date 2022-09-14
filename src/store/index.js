@@ -24,14 +24,15 @@ export default new Vuex.Store({
     createPersistedState({
       key: 'HEIMA_TOUTIAO',
       // storage: window.sessionStorage,
-      reducer({ tokenObj }) {
-        return { tokenObj }
+      reducer({ tokenObj, channels }) {
+        return { tokenObj, channels }
       }
     })
   ],
   state: {
-    tokenObj: {}
+    tokenObj: {},
     //   (window.localStorage.getItem('HEIMATOOUTIAO_TOKEN')) || {}
+    channels: []
   },
   getters: {
     isLogin(state) {
@@ -42,8 +43,14 @@ export default new Vuex.Store({
     SET_TOKEN(state, token) {
       // 将token存进vuex
       state.tokenObj = token
-      // 将token存进本地
-      // window.localStorage.setItem('HEIMATOOUTIAO_TOKEN,JSON.stringify(token)')
+    },
+    /**
+     *
+     * @param {*} channels 删除或者添加后的最新的channeLs
+     */
+    SET_MY_CHANNELS(state, channels) {
+      // 将token存进vuex
+      state.channels = channels
     }
   }
 })
