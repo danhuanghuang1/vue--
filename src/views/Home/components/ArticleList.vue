@@ -9,7 +9,9 @@
       <!-- loading为true,load事件不会被触发 -->
       <!-- loading为时faLse的时候Load事件会被触发 -->
       <!-- loading.会在load事件执行后，被van-list组件自动设置为ture,需要手动的改为时false -->
-      <!-- finished:BooLean。false时lload事件会被触发,true时load事件不会被出发了，并且显示finished-text的文本 -->
+      <!-- finished:BooLean。false时load事件会被触发,true时load事件不会被出发了，并且显示finished-text的文本 -->
+      <!-- error.sync 设置成 true 即可显示错误提示，用户点击错误提示后会重新触发 load 事件。 -->
+      <!-- load加载第一页和加载其他页可以合并书写只需要将:immediate-check="false"删掉即可 -->
       <van-list
         v-model="loading"
         @load="getNextPageArticles"

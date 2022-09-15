@@ -3,7 +3,15 @@
     <!-- 搜索栏 -->
     <van-nav-bar class="navbar">
       <template #title>
-        <van-button icon="search" size="small" round block> 搜索 </van-button>
+        <van-button
+          icon="search"
+          size="small"
+          round
+          block
+          @click="$router.push('/search')"
+        >
+          搜索
+        </van-button>
       </template>
     </van-nav-bar>
 
@@ -77,7 +85,7 @@ export default {
       if (this.isLogin) {
         // 1如果你登录了
         // channels.应该发清求获取用户自己的颜道
-        this.getChanne()
+        this.getChannel()
       } else {
         const myChannels = this.$store.state.channels
         // 2未登录

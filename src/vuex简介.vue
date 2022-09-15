@@ -8,7 +8,7 @@
 </template>
 
 <script>
-// mapState-->将vuex.里面statel映射到computed
+// mapState-->将vuex.里面state映射到computed
 // 使用
 // 引入mapState:函数，返回一个对象
 // 参数：['映射的属性]
